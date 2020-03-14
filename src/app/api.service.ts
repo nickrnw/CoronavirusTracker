@@ -8,8 +8,8 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getNews() {
-    return this.httpClient.get(`https://api.coronatracker.com/news/trending?limit=9&offset=0&countryCode=&country=&language=en`);
+  getNews(limit: number, offset: number) {
+    return this.httpClient.get(`https://api.coronatracker.com/news/trending?limit=${limit}&offset=${offset}&countryCode=&country=&language=en`);
   }
   
   searchNews(searchQuery: string) {
