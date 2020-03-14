@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Breaking News
+      Tracking The Numbers
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,17 +9,16 @@
 <ion-content>
   <div *ngFor="let article of articles">
     <ion-card>
-      <ion-img src="{{article.urlToImage}}"></ion-img>
       <ion-card-header>
         <div class="published">
-          <span class="date" *ngIf="article.publishedAt">{{ article.publishedAt |  date: 'medium' }} </span>
+          <span class="date" *ngIf="article.created">{{ ik |  date: 'medium' }} </span>
         </div>
         <ion-card-subtitle>{{article.title}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <p><q>{{article.description}}</q></p>
+       <!-- <p><q>{{article.description}}</q></p> -->
         <br>
-        <ion-button ion-button fill="outline" expand="block" href="{{article.url}}" large>Continue Reading</ion-button>
+        <ion-button ion-button fill="outline" expand="block" href="#" large>Continue Reading</ion-button>
       </ion-card-content>
     </ion-card>
   </div>
