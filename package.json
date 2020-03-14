@@ -4,18 +4,18 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "build-android": "ionic cordova build android",
+    "copy": "npx cap copy",
+    "serve": "ionic s --open",
+    "android": "npx cap open android",
+    "electron": "npx cap open electron"
   },
   "private": true,
   "dependencies": {
     "@angular/common": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "~8.2.14",
+    "@angular/http": "^7.2.15",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
@@ -30,6 +30,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "~0.12.3",
     "@angular-devkit/build-angular": "~0.803.20",
     "@angular/cli": "~8.3.23",
     "@angular/compiler": "~8.2.14",
@@ -53,5 +54,21 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  }
 }

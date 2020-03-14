@@ -1,7 +1,8 @@
 {
   "name": "corona-tracker",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
