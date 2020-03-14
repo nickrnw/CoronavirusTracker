@@ -10,15 +10,17 @@
   <div *ngFor="let article of articles">
     <ion-card>
       <ion-card-header>
-        <div class="published">
-          <span class="date" *ngIf="article.created">{{ ik |  date: 'medium' }} </span>
-        </div>
-        <ion-card-subtitle>{{article.title}}</ion-card-subtitle>
+        {{ article.countryName }}
+      <!--  <ion-card-subtitle>{{article.title}}</ion-card-subtitle> -->
       </ion-card-header>
       <ion-card-content>
-       <!-- <p><q>{{article.description}}</q></p> -->
-        <br>
-        <ion-button ion-button fill="outline" expand="block" href="#" large>Continue Reading</ion-button>
+       <p>Cases: {{article.confirmed}}</p>
+       <p>Dead: {{article.deaths}}</p>
+       <p>Recovered: {{article.recovered}}</p>
+       <p>Mortality Rate: {{ (article.deaths/article.confirmed) * 100 | number: '1.0-0' }}% </p>
+       <div class="published">
+        <span class="date" *ngIf="article.created">Last Updated: {{ article.created |  date: 'medium' }} </span>
+      </div>
       </ion-card-content>
     </ion-card>
   </div>

@@ -12,7 +12,7 @@ export class GlobalNumbersPage {
 
   constructor(private apiService: ApiService) { }
 
-  ionViewDidEnter() {
+   ionViewDidEnter() {
     this.apiService.getTopWorstOutbreaks(15).subscribe((data) => {
       this.articles = data
     });
