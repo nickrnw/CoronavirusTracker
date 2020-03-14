@@ -12,9 +12,20 @@ export class GlobalNumbersPage {
 
   constructor(private apiService: ApiService) { }
 
-   ionViewDidEnter() {
-    this.apiService.getTopWorstOutbreaks(15).subscribe((data) => {
+  getOutbreakData(count: number) {
+    return this.apiService.getTopWorstOutbreaks(count).subscribe((data) => {
       this.articles = data
     });
+  }
+
+  ionViewDidEnter() {
+    this.getOutbreakData(15);
+  }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      this.getOutbreakData(15);
+      event.target.complete();
+    }, 2000);
   }
 }

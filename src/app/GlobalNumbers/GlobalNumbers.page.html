@@ -7,19 +7,32 @@
 </ion-header>
 
 <ion-content>
+  <!-- Pull To Refresh -->
+  <div>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+  </div>
+  <!-- Outbreak Data -->
   <div *ngFor="let article of articles">
     <ion-card>
       <ion-card-header>
         <ion-card-title>{{ article.countryName }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-       <p>Cases: {{article.confirmed}}</p>
-       <p>Dead: {{article.deaths}}</p>
-       <p>Recovered: {{article.recovered}}</p>
-       <p>Mortality Rate: {{ (article.deaths/article.confirmed) * 100 | number: '1.0-2' }}% </p>
-       <div class="published">
-        <span class="date" *ngIf="article.created">Last Updated: {{ article.created |  date: 'medium' }} </span>
-      </div>
+        <p>Cases: {{article.confirmed}}</p>
+        <p>Dead: {{article.deaths}}</p>
+        <p>Recovered: {{article.recovered}}</p>
+        <p>
+          Mortality Rate: {{ (article.deaths/article.confirmed) * 100 | number:
+          '1.0-2' }}%
+        </p>
+        <div class="published">
+          <span class="date" *ngIf="article.created"
+            >Last Updated: {{ article.created | date: 'medium' }}
+          </span>
+        </div>
       </ion-card-content>
     </ion-card>
   </div>

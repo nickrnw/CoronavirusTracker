@@ -7,19 +7,36 @@
 </ion-header>
 
 <ion-content>
+  <!-- Pull To Refresh -->
+  <div>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+  </div>
+  <!-- Articles -->
   <div *ngFor="let article of articles">
     <ion-card>
       <ion-img src="{{article.urlToImage}}"></ion-img>
       <ion-card-header>
         <div class="published">
-          <span class="date" *ngIf="article.publishedAt">{{ article.publishedAt |  date: 'medium' }} </span>
+          <span class="date" *ngIf="article.publishedAt"
+            >{{ article.publishedAt | date: 'medium' }}
+          </span>
         </div>
-      <ion-card-title>{{article.title}}</ion-card-title>
+        <ion-card-title>{{article.title}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <p><q>{{article.description}}</q></p>
-        <br>
-        <ion-button ion-button fill="outline" expand="block" href="{{article.url}}" large>Continue Reading</ion-button>
+        <br />
+        <ion-button
+          ion-button
+          fill="outline"
+          expand="block"
+          href="{{article.url}}"
+          large
+          >Continue Reading</ion-button
+        >
       </ion-card-content>
     </ion-card>
   </div>

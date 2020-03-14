@@ -13,9 +13,20 @@ export class HomePage {
 
   constructor(private apiService: ApiService) { }
 
-  ionViewDidEnter() {
-    this.apiService.getNews().subscribe((data) => {
+  getNews() {
+    return this.apiService.getNews().subscribe((data) => {
       this.articles = data['items'];
     });
+  }
+
+  ionViewDidEnter() {
+    this.getNews();
+  }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      this.getNews();
+      event.target.complete();
+    }, 2000);
   }
 }
