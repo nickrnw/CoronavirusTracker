@@ -27,6 +27,7 @@ const routes: Routes = [
           }
         ]
       },
+/*
       {
         path: 'tab3',
         children: [
@@ -37,6 +38,7 @@ const routes: Routes = [
           }
         ]
       },
+*/
       {
         path: '',
         redirectTo: '/tabs/HomePage',
