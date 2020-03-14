@@ -1,6 +1,6 @@
 
 import { Component, ViewChild } from '@angular/core';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, ion-refresher } from '@ionic/angular';
 import { ApiService } from '../api.service';
 
 @Component({
