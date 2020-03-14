@@ -5,10 +5,9 @@
   "homepage": "",
   "scripts": {
     "build-android": "ionic cordova build android",
-    "copy": "npx cap copy",
-    "serve": "ionic s --open",
-    "run-android": "npx cap open android",
-    "run-electron": "npx cap open electron"
+    "sync": "npx cap sync",
+    "serve": "ionic serve",
+    "run-android": "npx cap open android"
   },
   "private": true,
   "dependencies": {
@@ -63,7 +62,7 @@
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"
   },
-  "description": "A project to track the latest developments in the occurring Coronavirus Epidemic",
+  "description": "A project to track the latest developments of the Coronavirus Epidemic",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
