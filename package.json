@@ -80,4 +80,3 @@
     ]
   }
 }
-ng update @angular/cli @angular/core
