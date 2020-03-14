@@ -13,7 +13,7 @@ export class HomePage {
 
   articles;
   offset: number = 0;
-  articleRequestRate: number = 3;
+  articleRequestRate: number = 15;
 
   constructor(private apiService: ApiService) { }
 

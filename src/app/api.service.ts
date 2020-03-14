@@ -31,6 +31,10 @@ export class ApiService {
   getTopWorstOutbreaks(count: number) {
     return this.httpClient.get(`https://api.coronatracker.com/v2/stats/top?limit=${count}`)
   }
+
+  getDailyNumbersAllCountries() {
+    return this.httpClient.get(`https://corona.lmao.ninja/countries`);
+  }
 }
 
 
