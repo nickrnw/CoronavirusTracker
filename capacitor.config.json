@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "corona-tracker",
+  "appId": "com.nightwalker.coronavirustracker",
+  "appName": "Coronavirus Tracker",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
