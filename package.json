@@ -7,7 +7,9 @@
     "build-android": "ionic cordova build android",
     "sync": "npx cap sync",
     "serve": "ionic serve",
-    "run-android": "npx cap open android"
+    "run-android": "npx cap open android",
+    "build-android-release": "ionic cordova build --release android",
+    "build-icons-splash-screen": "ionic cordova resources android"
   },
   "private": true,
   "dependencies": {
